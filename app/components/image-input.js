@@ -8,7 +8,7 @@ export default Ember.Component.extend({
     },
     actions: {
         fileSelectionChanged: function (file) {
-            this.get('files').pushObject(file)
+            this.get('files').pushObject(file);
             this.sendAction('fileChanged', file);
         }
     }

@@ -3,24 +3,16 @@ import Ember from 'ember';
 export default Ember.TextField.extend({
     type: 'file',
     change: function (e) {
-        let self = this;
+        let _this = this;
 
-        var inputFiles = e.target.files;
-        if (inputFiles.length < 1) {
+        if (e.target.files.length < 1) {
             return;
         }
 
-        let inputFile = inputFiles[0];
-
-        let fileInfo = {};
-
-        var fileReader = new FileReader();
+        let fileReader = new FileReader();
 
         fileReader.onload = function (e) {
-            let fileReader = e.target;
-            fileInfo.dataURL = fileReader.result;
-
-            self.sendAction('fileChanged', fileInfo);
+            _this.sendAction('fileChanged', { dataURL: e.target.result });
         };
 
         let firstFile = e.target.files[0];
