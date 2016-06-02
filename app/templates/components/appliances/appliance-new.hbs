@@ -27,10 +27,10 @@
 </div>
 {{#if isShowingModal}}
   {{#modal-dialog close="toggleModal" targetAttachment="center" translucentOverlay=true}}
-    <h4>Success!</h4>
+    <h4>{{fa-icon "info-circle"}}&nbsp;&nbsp;Success!</h4>
     <hr/>
     <p>The appliance listed successfully!</p>
     <hr/>
-    <div><button class="btn btn-default" {{action 'toggleModal'}}>Back to Appliances list</button></div>
+    <div><button class="btn btn-default" {{action 'toggleModal'}}>OK</button></div>
   {{/modal-dialog}}
 {{/if}}
