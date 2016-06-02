@@ -11,15 +11,13 @@
                 {{textarea value=appliances.newItem.description class="form-control" placeholder="Description"}}
             </div>
             <div class="form-group">
-                <div class="form-control" style="height:auto;">
-                    <ul class="list-inline">
-                        <li>Upload Appliance Images:</li>
-                        <li>{{file-input fileChanged="fileSelectionChanged"}}</li>
-                    </ul>
-                    {{#each appliances.newItem.files as |file|}}
-                        <img src="{{file.dataURL}}" height="100">
-                    {{/each}}
-                </div>
+                <ul class="list-inline">
+                    <li>Upload Appliance Images:</li>
+                    <li>{{file-input fileChanged="fileSelectionChanged"}}</li>
+                </ul>
+                {{#each appliances.newItem.files as |file|}}
+                    <img src="{{file.dataURL}}" height="100">
+                {{/each}}
             </div>
             <button type="submit" class="btn btn-info btn-sm" {{action 'submit' appliances.newItem}}>Submit</button>
             <button type="button" class="btn btn-default btn-sm" {{action 'cancel'}}>Cancel</button>
