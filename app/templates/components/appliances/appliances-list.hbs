@@ -1,13 +1,20 @@
     {{#each appliances.items as |item|}}
     <div class="panel panel-default">
         <div class="panel-heading">
-            {{item.model}}
+            <h5>{{item.model}}</h5>
         </div>
         <div class="panel-body">
             <p>{{item.description}}</p>
-            {{#each item.files as |file|}}
-                <img src="{{file.dataURL}}" height="100">
-            {{/each}}
+            <br/>
+            <div class="row">
+                {{#each item.files as |file|}}
+                <div class="col-xs-6 col-md-2">
+                    <a href="javascript::void(0)" class="thumbnail">
+                        <img src="{{file.dataURL}}" width="100%">
+                    </a>
+                </div>
+                {{/each}}
+            </div>
         </div>
     </div>
     {{/each}}
