@@ -1,0 +1,10 @@
+    {{#each appliances.items as |item|}}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            {{item.model}}
+        </div>
+        <div class="panel-body">
+            <p>{{item.description}}</p>
+        </div>
+    </div>
+    {{/each}}
