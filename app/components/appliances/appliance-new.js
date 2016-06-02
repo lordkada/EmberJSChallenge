@@ -8,7 +8,7 @@ export default Ember.Component.extend({
             if(_appliances.validateNewItem()) {
                 _appliances.addNewItem(appliance);
                 _appliances.clearNewItem();
-                alert('The appliance \'' + appliance.model + '\' is added successfully!');
+                alert('The appliance \'' + appliance.model + '\' is listed successfully!');
                 this.sendAction('submit');
             }
         },
