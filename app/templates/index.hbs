@@ -2,12 +2,25 @@
     <h2 class="text-warning">Welcome To 'Home Appliances List'</h2>
 
     <br/><br/>
-    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+    <div class="btn-group btn-group-justified visible-md-block visible-lg-block" role="group" aria-label="...">
         <div class="btn-group" role="group">
             {{#link-to 'appliances' tagName="a" class="btn btn-warning btn-lg"}}{{fa-icon "list-ul"}}&nbsp;&nbsp;&nbsp;Show Me The Listed Applicanes{{/link-to}}
         </div>
         <div class="btn-group" role="group">
-            {{#link-to 'appliances.new' tagName="a" class="btn btn-info btn-lg"}}{{fa-icon "plus-circle"}}&nbsp;&nbsp;&nbsp;List New Appliance{{/link-to}}
+            {{#link-to 'appliances.new' tagName="a" class="btn btn-info btn-lg"}}{{fa-icon "plus-circle"}}&nbsp;&nbsp;&nbsp;I Like To List New Appliance{{/link-to}}
+        </div>
+    </div>
+    <div class="visible-xs-block visible-sm-block">
+        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+            <div class="btn-group" role="group">
+                {{#link-to 'appliances' tagName="a" class="btn btn-warning btn-lg"}}{{fa-icon "list-ul"}}&nbsp;&nbsp;&nbsp;Show Me The Listed Applicanes{{/link-to}}
+            </div>
+        </div>
+        <br/>
+        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+            <div class="btn-group" role="group">
+                {{#link-to 'appliances.new' tagName="a" class="btn btn-info btn-lg"}}{{fa-icon "plus-circle"}}&nbsp;&nbsp;&nbsp;I Like To List New Appliance{{/link-to}}
+            </div>
         </div>
     </div>
 
