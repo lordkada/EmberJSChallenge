@@ -12,8 +12,10 @@ export default Ember.Component.extend({
                 this.sendAction('submit');
             }
         },
-        cancel() {
+        reset() {
             this.get('appliances').clearNewItem();
+        },
+        backToList() {
             this.sendAction('cancel');
         },
         fileSelectionChanged(file) {
