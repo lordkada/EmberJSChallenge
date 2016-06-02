@@ -10,7 +10,14 @@
             <div class="form-group">
                 {{input type="text" value=appliances.newItem.description class="form-control" placeholder="Description"}}
             </div>
-            <button type="submit" class="btn btn-warning btn-sm" {{action 'next'}}>Next</button>
+            <div class="form-group">
+                {{file-input fileChanged="fileSelectionChanged"}}
+                <br/>
+                {{#each appliances.newItem.files as |file|}}
+                <img src="{{file.dataURL}}" height="100">
+                {{/each}}
+            </div>
+            <button type="submit" class="btn btn-warning btn-sm" {{action 'submit' appliances.newItem}}>Submit</button>
             <button type="button" class="btn btn-default btn-sm" {{action 'cancel'}}>Cancel</button>
         </form>
     </div>
