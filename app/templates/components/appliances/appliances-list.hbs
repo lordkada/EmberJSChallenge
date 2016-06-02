@@ -5,6 +5,9 @@
         </div>
         <div class="panel-body">
             <p>{{item.description}}</p>
+            {{#each item.files as |file|}}
+                <img src="{{file.dataURL}}" height="100">
+            {{/each}}
         </div>
     </div>
     {{/each}}

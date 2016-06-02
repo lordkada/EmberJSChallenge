@@ -19,13 +19,18 @@ export default Ember.Service.extend({
     /* Property to hold the New Appliance data */
     newItem: {
         model: null,
-        description: null
+        description: null,
+        files: []
+    },
+    setNewItemFile(file) {
+        this.get('newItem').files.pushObject(file);
     },
     /* Clear the New Appliance data */
     clearNewItem() {
         this.set('newItem', {
             model: null,
-            description: null
+            description: null,
+            files: []
         });
     },
     /* Add new appliance to database using REST API */

@@ -1,0 +1,5 @@
+{{#each files as |file|}}
+<img src="{{file.dataURL}}" height="100">
+{{/each}}
+<br>
+{{file-input fileChanged="fileSelectionChanged"}}
