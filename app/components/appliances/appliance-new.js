@@ -4,10 +4,13 @@ export default Ember.Component.extend({
     appliances: Ember.inject.service('appliances-list'),
     actions: {
         submit(appliance) {
-            this.get('appliances').addNewItem(appliance);
-            this.get('appliances').clearNewItem();
-            alert('The appliance \'' + appliance.model + '\' is added successfully!');
-            this.sendAction('submit');
+            let _appliances = this.get('appliances');
+            if(_appliances.validateNewItem()) {
+                _appliances.addNewItem(appliance);
+                _appliances.clearNewItem();
+                alert('The appliance \'' + appliance.model + '\' is added successfully!');
+                this.sendAction('submit');
+            }
         },
         cancel() {
             this.get('appliances').clearNewItem();

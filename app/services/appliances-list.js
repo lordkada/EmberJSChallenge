@@ -37,6 +37,10 @@ export default Ember.Service.extend({
     setNewItemFile(file) {
         this.get('newItem').files.pushObject(file);
     },
+    validateNewItem() {
+        var _newItem = this.get('newItem');
+        return _newItem.model && _newItem.description && _newItem.files && (_newItem.files.length > 0);
+    },
     /* Clear the New Appliance data */
     clearNewItem() {
         this.set('newItem', {
