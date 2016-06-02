@@ -8,8 +8,7 @@ export default Ember.Component.extend({
             if(_appliances.validateNewItem()) {
                 _appliances.addNewItem(appliance);
                 _appliances.clearNewItem();
-                alert('The appliance \'' + appliance.model + '\' is listed successfully!');
-                this.sendAction('submit');
+                this.toggleProperty('isShowingModal');
             }
         },
         reset() {
@@ -20,6 +19,10 @@ export default Ember.Component.extend({
         },
         fileSelectionChanged(file) {
             this.get('appliances').setNewItemFile(file);
+        },
+        toggleModal: function() {
+            this.toggleProperty('isShowingModal');
+            this.sendAction('submit');
         }
     }
 });
