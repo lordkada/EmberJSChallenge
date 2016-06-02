@@ -7,9 +7,11 @@ export default Ember.Component.extend({
             this.get('appliances').addNewItem(appliance);
             this.get('appliances').clearNewItem();
             alert('The appliance \'' + appliance.model + '\' is added successfully!');
+            this.sendAction('submit');
         },
         cancel() {
             this.get('appliances').clearNewItem();
+            this.sendAction('cancel');
         }
     }
 });
