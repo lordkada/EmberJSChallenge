@@ -17,5 +17,7 @@ export default Ember.TextField.extend({
 
         let firstFile = e.target.files[0];
         fileReader.readAsDataURL(firstFile);
+        
+        e.target.value = '';
     }
 });
