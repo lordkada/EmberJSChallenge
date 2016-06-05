@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.TextField.extend({
     type: 'file',
+    attributeBindings: ['style'],
     change: function (e) {
         let _this = this;
 

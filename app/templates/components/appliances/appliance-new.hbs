@@ -13,7 +13,7 @@
             <div class="form-group">
                 <ul class="list-inline">
                     <li>Upload Appliance Images:</li>
-                    <li>{{file-input fileChanged="fileSelectionChanged"}}</li>
+                    <li>{{file-input fileChanged="fileSelectionChanged" style="width:100px;color:transparent;"}}</li>
                 </ul>
                 {{#each appliances.newItem.files as |file|}}
                     <img src="{{file.dataURL}}" height="100">
