@@ -2,6 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     appliances: Ember.inject.service('appliances-list'),
+    newItemChanged: Ember.observer('appliances.newItem.model', 'appliances.newItem.description', 'appliances.newItem.files.length', function() {
+      this.get('appliances').setNewItem(this.get('appliances.newItem'));
+    }),
     actions: {
         submit(appliance) {
             let _appliances = this.get('appliances');

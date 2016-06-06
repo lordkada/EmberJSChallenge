@@ -29,12 +29,12 @@ export default Ember.Service.extend({
         description: null,
         files: []
     },
-    newItemChanged: Ember.observer('newItem.model', 'newItem.description', 'newItem.files.length', function() {
-        /* Update the session storage */
-        window.sessionStorage.setItem('appliances.new', JSON.stringify(this.get('newItem')));
-    }),
     setNewItemFile(file) {
         this.get('newItem').files.pushObject(file);
+    },
+    setNewItem(newItem) {
+        /* Update the session storage */
+        window.sessionStorage.setItem('appliances.new', JSON.stringify(newItem));
     },
     validateNewItem() {
         var _newItem = this.get('newItem');
@@ -44,7 +44,7 @@ export default Ember.Service.extend({
     clearNewItem() {
         /* Clear the session storage */
         window.sessionStorage.removeItem('appliances.new');
-        
+
         /* Reinitialize the new item */
         this.set('newItem', {
             model: null,
